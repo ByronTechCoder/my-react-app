@@ -1,0 +1,1 @@
+- [Project conventions](project_conventions.md) — terraform/ layout, provider pin, OAC/TLS gotchas for my-react-app S3+CloudFront setup

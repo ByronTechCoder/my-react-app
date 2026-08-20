@@ -12,3 +12,18 @@ yarn-error.log*
 .DS_Store
 *.log
 *.swp
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/crash.log
+terraform/crash.*.log
+terraform/*.tfvars
+terraform/*.tfvars.json
+terraform/override.tf
+terraform/override.tf.json
+terraform/*_override.tf
+terraform/*_override.tf.json
+# Claude Code local settings (contains AWS credentials/region)
+.claude/settings.local.json
