@@ -9,6 +9,6 @@ test('renders welcome message', () => {
 
 test('renders nginx message', () => {
   render(<App />);
-  const paragraph = screen.getByText(/This app is running on Nginx!/i);
+  const paragraph = screen.getByText(/This app is running on AWS CloudFront!/i);
   expect(paragraph).toBeInTheDocument();
 });
