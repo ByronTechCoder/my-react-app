@@ -46,7 +46,7 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
     condition {
       test     = "StringEquals"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:ByronTechCoder/my-react-app:ref:refs/heads/main"]
+      values   = ["repo:ByronTechCoder@${var.github_org_id}/my-react-app@${var.github_repo_id}:ref:refs/heads/main"]
     }
   }
 }

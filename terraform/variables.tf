@@ -37,3 +37,21 @@ variable "acm_certificate_arn" {
   type        = string
   default     = ""
 }
+
+# GitHub now includes immutable numeric IDs in the OIDC token's `sub` claim
+# (repo:OWNER@ORG_ID/REPO@REPO_ID:ref:...) rather than just OWNER/REPO, so the
+# IAM trust policy must match on these IDs, not names. IDs don't change on
+# repo/org rename, unlike names, so this is also the more secure match.
+# Confirmed via CloudTrail (AssumeRoleWithWebIdentity userIdentity.userName)
+# against the actual token GitHub issued for ByronTechCoder/my-react-app.
+variable "github_org_id" {
+  description = "GitHub organization/owner numeric ID, used in the OIDC trust policy's sub condition."
+  type        = string
+  default     = "244091638"
+}
+
+variable "github_repo_id" {
+  description = "GitHub repository numeric ID, used in the OIDC trust policy's sub condition."
+  type        = string
+  default     = "1340820459"
+}
