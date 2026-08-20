@@ -17,3 +17,8 @@ output "s3_bucket_arn" {
   description = "ARN of the S3 bucket hosting the built site content."
   value       = aws_s3_bucket.site.arn
 }
+
+output "github_actions_role_arn" {
+  description = "ARN of the IAM role assumed by GitHub Actions via OIDC. Set this as the AWS_ROLE_ARN repo secret."
+  value       = aws_iam_role.github_actions_deploy.arn
+}
